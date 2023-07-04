@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* Styles for extra small devices (up to 768px) */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+      
+    .step-bar,
+    .div2,
+    .navigation,
+    .form-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+      
+    .step-bar {
+        top: 0;
+        height: 25vh;
+        width: 100%;
+        background-color: coral;
+        z-index: 1;
+
+        .step-contents {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 15vh;
+            padding: 0 80px;
+
+            .step-btn {
+                border-radius: 50%;
+                border-color: white;
+                border-width: 0.5px;
+                background-color: transparent;
+                width: 40px;
+                height: 40px;
+
+            }
+        }
+    }
+      
+    .div2 {
+        top: 25vh;
+        height: 65vh;
+        width: 100%;
+        background-color: lightgrey;
+        z-index: 2;
+    }
+      
+    .navigation {
+        top: 90vh;
+        height: 10vh;
+        width: 100%;
+        background-color: white;
+        z-index: 3;
+        padding: 0 20px;
+
+        .buttons-container {
+            display: flex;
+            align-items: center;
+            height: 10vh;
+
+            .previous {
+                position: absolute;
+                left: 10px;
+            }
+
+            .next, .submit {
+                position: absolute;
+                right: 10px;
+            }
+        }
+    }
+      
+    .form-container {
+        top: 14vh;
+        min-height: 60vh;
+        width: 350px;
+        background-color: white;
+        z-index: 4;
+        border-radius: 5px;
+
+        form {
+            margin: 20px;
+
+            .title {
+                font-size: 28px;
+                margin: 40px 0 10px 0;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                // margin: 15px 0;
+            }
+
+            .field {
+                margin: 15px 0;
+
+                .label {
+                    font-size: 12px;
+                }
+    
+                input {
+                    width: 100%;
+                    height: 40px;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    border-color: lightgrey;
+                    border-width: 1px;
+                    padding-left: 12px;
+                }
+            }
+
+            .plan-container {
+                .plan-card {
+                    display: flex;
+                    justify-content: center;
+                    height: 80px;
+                    margin: 10px 0;
+                }
+            }
+
+            .billing-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+
+                #switch {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        margin-left: 10px;
+                        margin-right: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Styles for medium devices (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+
+}
+
+
+/* Styles for extra large devices (1200px and above) */
+@media (min-width: 1200px) {
+
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+

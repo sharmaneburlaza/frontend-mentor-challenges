@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="step-bar">
+        <div class="step-contents">
+            <div class="step" *ngFor="let step of steps">
+                <button class="step-btn">
+                    {{ step.number }}
+                </button>
+                <div class="step-desc" [class.hide]="isScreenSmall()">
+                    <p>STEP {{ step.number }}</p>
+                    <P>{{ step.label }}</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div2">
+    </div>
+    <div class="form-container">
+        <form action="" (ngSubmit)="submitForm()">
+            <div class="form-body">
+                <ng-container *ngIf="currentStep === 1">
+                    <h2 class="title">Personal info</h2>
+                    <p class="subtitle">Please provide your name, email address, and phone number.</p>
+                    <div class="field">
+                        <p class="label">Name</p>
+                        <input type="text" placeholder="e.g. Stephen King">
+                    </div>
+                    <div class="field">
+                        <p class="label">Email Address</p>
+                        <input type="text" placeholder="e.g. stephenking@lorem.com">
+                    </div>
+                    <div class="field">
+                        <p class="label">Phone Number</p>
+                        <input type="number" placeholder="e.g. 09163948492">
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="currentStep === 2">
+                    <h2 class="title">Select your plan</h2>
+                    <p class="subtitle">You have the option of monthly or yearly billing.</p>
+                    <div class="plan-container">
+                        <div class="card plan-card" *ngFor="let plan of plans">
+                            <i></i>
+                            <p>{{plan.name}}</p>
+                            <div *ngIf="selectedBilling === 'Monthly'">
+                                <p>{{plan.billing[0].amount}}/mo</p>
+                            </div>
+                            <div *ngIf="selectedBilling === 'Yearly'">
+                                <p>{{plan.billing[1].amount}}/yr</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card billing-container">
+                        <div id="switch" class="form-check form-switch">
+                            <p id="p-left">Monthly</p>
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <p id="right">Yearly</p>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="currentStep === 3">
+                    <h2 class="title">Pick add-ons</h2>
+                    <p class="subtitle">Add-ons help enhance your gaming experience.</p>
+                    <div id="addOns-container">
+                        <div class="card addOns-card" *ngFor="let item of addOns">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <div class="label">
+                                    <p>{{ item.name }}</p>
+                                    <p>{{ item.description }}</p>
+                                    <div *ngIf="selectedBilling === 'Monthly'">
+                                        <p>{{ item.billing[0].amount }}/mo</p>
+                                    </div>
+                                    <div *ngIf="selectedBilling === 'Yearly'">
+                                        <p>{{ item.billing[1].amount }}/yr</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="currentStep === 4">
+                    <h2 class="title">Finishing up</h2>
+                    <p class="subtitle">Double-check everything looks OK before confirming.</p>
+                    <div class="summary-container">
+                        <table>
+                            <tr>
+                                <td>Arcade ({{selectedBilling}})</td>
+                                <td>10/mo</td>
+                            </tr>
+                            <tr>
+                                <td>Online Service</td>
+                                <td>1/mo</td>
+                            </tr>
+                            <tr>
+                                <td>Larger Storage</td>
+                                <td>1/mo</td>
+                            </tr>
+                            <tr>
+                                <td>Total ()</td>
+                                <td>1/mo</td>
+                            </tr>
+                        </table>
+                    </div>
+                </ng-container>
+            </div>
+        </form>
+    </div>
+    <div class="navigation">
+        <div class="buttons-container">
+            <button *ngIf="currentStep !== 1" 
+                type="button" 
+                class="btn btn-primary previous" 
+                (click)="previousStep()">
+                    Go Back
+            </button>
+            <button *ngIf="currentStep !== totalSteps" 
+                type="button" 
+                class="btn btn-primary next" 
+                (click)="nextStep()">
+                    Next Step
+            </button>
+            <button *ngIf="currentStep === totalSteps" 
+                type="submit" 
+                class="btn btn-primary submit">
+                    Submit
+            </button>
+        </div>
+    </div>
+</div>
+  
