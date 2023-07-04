@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "multi-step-form-app": {
+    "frontend-mentor-challenges-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/multi-step-form-app",
+            "outputPath": "dist/frontend-mentor-challenges-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "multi-step-form-app:build:production"
+              "browserTarget": "frontend-mentor-challenges-app:build:production"
             },
             "development": {
-              "browserTarget": "multi-step-form-app:build:development"
+              "browserTarget": "frontend-mentor-challenges-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "multi-step-form-app:build"
+            "browserTarget": "frontend-mentor-challenges-app:build"
           }
         },
         "test": {
