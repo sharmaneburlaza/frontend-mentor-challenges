@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MultiStepFormComponent } from './multi-step-form/multi-step-form.component';
 
+import { InputSwitchModule } from 'primeng/inputswitch';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,8 @@ import { MultiStepFormComponent } from './multi-step-form/multi-step-form.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
