@@ -1,5 +1,9 @@
+@import "../../styles/variables";
+// @import '_variables.scss';
+
 * {
     margin: 0;
+    font-family: 'Ubuntu', sans-serif; //weights: 400, 500, 700
 }
 
 .hide {
@@ -28,7 +32,11 @@
         top: 0;
         height: 25vh;
         width: 100%;
-        background-color: coral;
+        background-image: url('/assets/svg/bg-sidebar-mobile.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
         z-index: 1;
 
         .step-contents {
@@ -43,18 +51,23 @@
                 border-color: white;
                 border-width: 0.5px;
                 background-color: transparent;
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
+                color: white;
+            }
 
+            .step-bg {
+                background-color: aliceblue;
+                color: black;
             }
         }
     }
       
     .div2 {
         top: 25vh;
-        height: 65vh;
+        height: 75vh;
         width: 100%;
-        background-color: lightgrey;
+        background-color: $magnolia;
         z-index: 2;
     }
       
@@ -63,45 +76,57 @@
         height: 10vh;
         width: 100%;
         background-color: white;
-        z-index: 3;
         padding: 0 20px;
+        z-index: 3;
 
         .buttons-container {
             display: flex;
             align-items: center;
             height: 10vh;
 
-            .previous {
+            .btn-previous {
                 position: absolute;
                 left: 10px;
+                border: none;
+                padding: 5px 8px;
+                background-color: $alabaster;
+                color: $cool_gray;
+                font-size: 14px;
             }
 
-            .next, .submit {
+            .btn-next, .btn-submit {
                 position: absolute;
                 right: 10px;
+                background-color: $marine-blue;
+                color: aliceblue;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-size: 14px;
             }
         }
     }
       
     .form-container {
-        top: 14vh;
-        min-height: 60vh;
+        top: 15vh;
         width: 350px;
         background-color: white;
         z-index: 4;
-        border-radius: 5px;
+        border-radius: 10px;
 
         form {
-            margin: 20px;
+            margin: 30px;
 
             .title {
-                font-size: 28px;
-                margin: 40px 0 10px 0;
+                font-size: 25px;
+                font-weight: 700;
+                margin: 30px 0 10px 0;
+                color: $marine-blue;
             }
 
             .subtitle {
                 font-size: 16px;
-                // margin: 15px 0;
+                color: $cool_gray;
             }
 
             .field {
@@ -109,6 +134,7 @@
 
                 .label {
                     font-size: 12px;
+                    color: $marine-blue;
                 }
     
                 input {
@@ -119,15 +145,69 @@
                     border-color: lightgrey;
                     border-width: 1px;
                     padding-left: 12px;
+                    color: $cool_gray;
                 }
             }
 
-            .plan-container {
+            .plan-container, .addOns-container {
+                margin: 10px 0;
+
                 .plan-card {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 80px;
+                    margin: 10px 0;
+
+                    svg {
+                        margin: 0 15px;
+                    }
+
+                    .name {
+                        color: $marine-blue;
+                        font-weight: 500;
+                    }
+
+                    .bill {
+                        color: $cool_gray;
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+
+                    .sub-info {
+                        font-size: 12px;
+                        color: $marine-blue;
+                    }
+                }
+
+                .addOns-card {
                     display: flex;
                     justify-content: center;
                     height: 80px;
-                    margin: 10px 0;
+                    margin: 5px 0;
+
+                    .form-check {
+                        display: flex;
+                        align-items: center;
+                        padding: 0;
+
+                        .form-check-input {
+                            margin: 0 15px;
+                        }
+
+                        .label {
+                            width: 180px;
+
+                            .description {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .bill {
+                            font-size: 12px;;
+                            color: $purplish-blue;
+                        }
+                    }
                 }
             }
 
@@ -136,18 +216,52 @@
                 justify-content: center;
                 align-items: center;
                 height: 40px;
+                margin: 20px 0 10px 0;
+                background-color: $magnolia;
+                padding: 25px 0;
+                border: none;
 
                 #switch {
                     display: flex;
                     align-items: center;
 
                     p {
-                        margin-left: 10px;
-                        margin-right: 50px;
+                        margin-left: 20px;
+                        margin-right: 60px;
+                        font-size: 14px;
                     }
                 }
             }
+
+            .summary-container {
+                margin: 20px 0;
+
+                .summary-field {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 10px 15px;
+                }
+
+                #total {
+                    margin: 40px 15px;
+                }
+            }
         }
+    }
+}
+
+.confirmation {
+    margin: 80px 0;
+    text-align: center;
+    
+    .thankyou {
+        margin: 20px 0 10px 0;
+        color: $marine-blue;
+    }
+
+    p {
+        color: $cool_gray;
     }
 }
 
