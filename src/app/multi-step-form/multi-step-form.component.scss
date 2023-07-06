@@ -12,8 +12,7 @@
 
 .step-btn {
     border-radius: 50%;
-    border-color: $white;
-    border-width: 1px;
+    border: 1px solid $white;
     background-color: transparent;
     width: 35px;
     height: 35px;
@@ -29,21 +28,35 @@
 .field {
     margin: 15px 0;
 
-    p {
-        font-size: 12px;
-        color: $marine-blue;
+    .input-label {
+        display: flex;
+        justify-content: space-between;
+    
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            color: $marine-blue;
+        }
     }
 
     input {
         width: 100%;
-        height: 40px;
+        height: 45px;
         font-size: 14px;
         border-radius: 5px;
-        border-color: lightgrey;
-        border-width: 1px;
+        border: 1px solid $light_gray;
         padding-left: 12px;
         color: $cool_gray;
     }
+    
+    input:active {
+        // border: 1px solid greenyellow !important;
+    }
+
+}
+
+.invalid-input {
+    border: 1px solid red !important;
 }
 
 .plan-card {
@@ -74,19 +87,16 @@
     border-color: $purplish-blue;
 }
 
-
-.input-label {
-    display: flex;
-    justify-content: space-between;
-
-    p {
-        font-weight: 500;
-    }
-}
-
-span {
+span, .plan-error {
     color: red;
     font-size: 10px;
+    margin: 8px 0;
+}
+
+.plan-error {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
 }
 
 .btn-previous {
@@ -104,12 +114,11 @@ span {
 }
 
 .confirmation {
-    margin: 80px 0;
-    text-align: center;
     
     .thankyou {
-        margin: 20px 0 10px 0;
         color: $marine-blue;
+        margin: 20px 0 10px 0;
+
     }
 
     p {
@@ -146,7 +155,6 @@ span {
     .form-check {
         display: flex;
         align-items: center;
-        // justify-content: space-between;
         padding: 0;
 
         input {
@@ -154,7 +162,7 @@ span {
             width: 20px;
         }
 
-        .label {
+        .checkbox-label {
             // width: 180px;
             .name {
                 color: $marine-blue;
@@ -218,6 +226,11 @@ span {
         color: $purplish-blue;
         font-size: 20px;
     }
+}
+
+.card.plan-card:hover, .addOns-card:hover {
+    background-color: $white !important;
+    border-color: $purplish-blue !important;
 }
 
 
@@ -317,6 +330,13 @@ span {
                 color: $cool_gray;
             }
 
+            .input-label {
+            
+                p {
+                    margin: 2px 0;
+                }
+            }
+
             .plans-container, .addOns-container {
                 margin: 10px 0;
 
@@ -341,17 +361,11 @@ span {
                             margin: 0 15px;
                         }
                         
-                        .label {
+                        .checkbox-label {
                             width: 180px;
                         }
                     }
                 }
-
-                .plan-card:hover {
-                    background-color: $magnolia !important;
-                    border-color: $purplish-blue !important;
-                }
-
 
             }
 
@@ -361,6 +375,11 @@ span {
 
 
         }
+    }
+
+    .confirmation {
+        margin: 80px 0;
+        text-align: center;
     }
 }
 
@@ -398,8 +417,8 @@ span {
 
                     .step {
                         display: flex;
-                        align-content: center;
-                        margin-bottom: 20px;
+                        align-items: center;
+                        margin-bottom: 30px;
 
                         .step-desc {
                             margin: 0 10px;
@@ -411,7 +430,9 @@ span {
 
                             .label {
                                 color: $light_gray;
-                                font-weight: 500;
+                                font-weight: 700;
+                                font-size: 14px;
+                                letter-spacing: 1px;
                             }
                         }
                     }
@@ -440,6 +461,13 @@ span {
                         font-size: 16px;
                         color: $cool_gray;
                         margin-bottom: 30px;
+                    }
+
+                    .input-label {
+            
+                        p {
+                            margin: 6px 0;
+                        }
                     }
 
                     .plans-container {
@@ -476,7 +504,7 @@ span {
                                     margin: 0 20px;
                                 }
                                 
-                                .label {
+                                .checkbox-label {
                                     width: 320px;
                                 }
                             }
@@ -507,24 +535,17 @@ span {
                     }
         
                     .btn-next, .btn-submit {
-                        padding: 12px 20px;
+                        padding: 12px 10px;
                         font-size: 16px;
+                        width: 120px;
                     }
                 }
             }
         }
     }
+
+    .confirmation {
+        margin: 120px 0;
+        text-align: center;
+    }
 }
-
-
-
-  
-
-
-
-
-
-
-
-
-

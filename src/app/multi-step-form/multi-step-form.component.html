@@ -31,6 +31,8 @@
                             </div>
                             <input type="text" 
                                 placeholder="e.g. Stephen King"
+                                [class.invalid-input]="(form.get('name').invalid && form.get('name').touched) 
+                                    || (form.get('name').invalid && isNextButtonClicked)"
                                 formControlName="name">
                         </div>
                         <div class="field">
@@ -41,8 +43,10 @@
                                     {{INPUT_ERROR}}
                                 </span>
                             </div>
-                            <input type="text" 
+                            <input type="email" 
                                 placeholder="e.g. stephenking@lorem.com"
+                                [class.invalid-input]="form.get('email').invalid && form.get('email').touched 
+                                    || (form.get('email').invalid && isNextButtonClicked)"
                                 formControlName="email">
                         </div>
                         <div class="field">
@@ -55,6 +59,8 @@
                             </div>
                             <input type="text" 
                                 placeholder="e.g. 09163948492"
+                                [class.invalid-input]="form.get('phoneNum').invalid && form.get('phoneNum').touched
+                                || (form.get('phoneNum').invalid && isNextButtonClicked)"
                                 formControlName="phoneNum">
                         </div>
                     </ng-container>
@@ -100,6 +106,7 @@
                                 <p id="right">Yearly</p>
                             </div>
                         </div>
+                        <p *ngIf="planError" class="plan-error"> {{ planError }} </p>
                     </ng-container>
                     <ng-container *ngIf="currentStep === 3 && !submitted">
                         <h2 class="title">Pick add-ons</h2>
@@ -112,9 +119,9 @@
                                 <div class="form-check">
                                     <input class="form-check-input" 
                                         type="checkbox" 
-                                        id="{{item.name}}"
-                                        [checked]="item.selected">
-                                    <label class="label" for="{{item.name}}">
+                                        [checked]="item.selected"
+                                        >
+                                    <label class="checkbox-label">
                                         <p class="name">{{ item.name }}</p>
                                         <p class="description">{{ item.description }}</p>
                                     </label>

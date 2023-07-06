@@ -25,6 +25,7 @@ export class MultiStepFormComponent {
   selectedBilling = YEARLY;
   billing = 'year';
   selectedPlanIndex = -1;
+  planError = '';
   isYearly = true;
   screenWidth: any;
   submitted = false;
@@ -114,13 +115,13 @@ export class MultiStepFormComponent {
 
     this.form = this.fb.group({
       name: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       phoneNum: ['', Validators.required],
     })
   }
 
   isScreenSmall(): boolean {
-    return window.innerWidth < 768;
+    return window.innerWidth < 996;
   }
 
   @HostListener('window:resize')
@@ -132,7 +133,10 @@ export class MultiStepFormComponent {
   nextStep(): void {
     if (this.currentStep === 1 && this.form.invalid) {
       this.isNextButtonClicked = true;
+    } else if (this.currentStep === 2 && this.selectedPlanIndex < 0) {
+      this.planError = 'No selected plan.'
     } else if (this.currentStep < this.totalSteps) {
+      this.planError = '';
       this.currentStep++;
     }
   }
@@ -150,7 +154,7 @@ export class MultiStepFormComponent {
 
   onBillingToggleChange(): void {
     this.isYearly = !this.isYearly;
-    this.selectedBilling = this.isYearly ? 'Yearly ': MONTHLY;
+    this.selectedBilling = this.isYearly ? YEARLY : MONTHLY;
     this.billing = this.selectedBilling === YEARLY ? 'year' : 'month';
   }
 
