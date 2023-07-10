@@ -1,0 +1,82 @@
+* {
+    font-family: 'Nunito Sans'; // 300, 600, 800
+}
+
+h3 {
+    font-weight: 800;
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.detail-container {
+    padding: 30px 20px;
+}
+
+button {
+    border: none;
+    box-shadow: 2px;
+    padding: 5px 20px;
+    width: 100px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+.group1, .group2 {
+    p {
+        font-weight: 600;
+
+        span {
+            font-weight: 300;
+        }
+    }
+}
+
+
+/* Styles for extra small - medium devices (up to 996px) */
+@media (max-width: 996px) {
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        img {
+            margin-top: 40px;
+        }
+
+        .description {
+
+            h3 {
+                margin: 40px 0 30px 0;
+            }
+
+            .group2 {
+                margin-top: 40px;
+            }
+
+            .group3 {
+                margin-top: 40px;
+
+                .borders {
+                    display: inline-flex;
+                    flex-direction: row;
+
+                    p {
+                        background-color: aquamarine;
+                        padding: 5px 10px;
+                        margin: 4px;
+                        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+/* Styles for extra large devices (996px and above) */
+@media (min-width: 996px) {
+    
+}

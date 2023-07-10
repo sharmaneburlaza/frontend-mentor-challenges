@@ -4,6 +4,15 @@ import { MultiStepFormComponent } from './multi-step-form/multi-step-form.compon
 
 const routes: Routes = [
   {path: 'multi-step-form', component: MultiStepFormComponent},
+  {
+    path: 'rest-countries',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./rest-countries-api/rest-countries-api.module').then(m => m.RestCountriesApiModule),
+      }
+    ]
+  },
   { path: '', redirectTo: 'multi-step-form', pathMatch: 'full' },
 ];
 

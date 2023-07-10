@@ -1,0 +1,39 @@
+* {
+    font-family: 'Nunito Sans'; // 300, 600, 800
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: aliceblue;
+    padding: 20px;
+
+    p {
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        left: 20px;
+        font-weight: 800;
+    }
+
+    .toggle {
+        position: absolute;
+        right: 20px;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+/* Styles for extra small - medium devices (up to 996px) */
+@media (max-width: 996px) {
+    
+}
+
+/* Styles for extra large devices (996px and above) */
+@media (min-width: 996px) {
+    
+}

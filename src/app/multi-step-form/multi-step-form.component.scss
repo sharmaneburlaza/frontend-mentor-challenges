@@ -1,9 +1,9 @@
-@import "../../styles/variables";
+@import "../../styles/variables-multistep-form";
 // @import '_variables.scss';
 
 * {
     margin: 0;
-    font-family: 'Ubuntu', sans-serif; //weights: 400, 500, 700
+    font-family: 'Ubuntu', sans-serif; // weights: 400, 500, 700
 }
 
 .hide {
@@ -163,7 +163,7 @@ span, .plan-error {
         }
 
         .checkbox-label {
-            // width: 180px;
+            
             .name {
                 color: $marine-blue;
                 font-weight: 500;

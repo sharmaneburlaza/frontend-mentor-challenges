@@ -1,0 +1,81 @@
+@import "../../../styles/variables-rest-countries";
+
+* {
+    font-family: 'Nunito Sans'; // 300, 600, 800
+}
+
+input::placeholder {
+    color: $lm_dark_gray;
+}
+
+option::placeholder {
+    color: $lm_dark_gray;
+}
+
+.home-container {
+    padding: 20px;
+
+    .functionalities {
+        // margin: 20px;
+    
+        .input-group {
+            height: 50px;
+        
+            .input-group-prepend {
+        
+                .input-group-text {
+                    height: 45px;
+                    width: 60px;
+                    display: flex;
+                    justify-content: center;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+        
+            input {
+                height: 45px;
+            }
+        }
+    
+        .form-select {
+            height: 45px;
+            width: 50%;
+            margin-top: 10px;
+        }
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        .card {
+            width: 275px;
+            height: 330px;
+            margin: 25px 25px;
+            .card-top {
+    
+                img {
+                    width: 100%;
+                    height: 150px;
+                }
+            }
+            .card-bottom {
+                margin: 20px;
+    
+                h3 {
+                    margin-bottom: 10px;
+                }
+    
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    
+}
+

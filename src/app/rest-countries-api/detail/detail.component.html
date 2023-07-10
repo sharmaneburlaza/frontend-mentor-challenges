@@ -1,0 +1,40 @@
+<rest-countries-nav (darkModeValue)="handleValueChange($event)"></rest-countries-nav>
+<div #elementRef class="detail-container">
+    <button (click)="backToHome()"> <i class="bi bi-arrow-left"></i> Back </button>
+    <div class="content">
+        <img src="{{ country?.flags?.png }}" alt="">
+        <div class="description">
+            <h3>{{ country?.name }}</h3>
+            <div class="group1">
+                <p>Native Name: <span>{{ country?.nativeName }}</span></p>
+                <p>Population: <span>{{ country?.population }}</span></p>
+                <p>Region: <span>{{ country?.region }}</span></p>
+                <p>Sub Region: <span>{{ country?.subregion }}</span></p>
+                <p>Capital: <span>{{ country?.capital }}</span></p>
+            </div>
+            <div class="group2">
+                <p>Top Level Domain: 
+                    <ng-container *ngFor="let tld of country?.topLevelDomain">
+                        <span>{{ tld }}</span>
+                    </ng-container>
+                </p>
+                <p>Currencies: 
+                    <ng-container *ngFor="let currency of country?.currencies">
+                        <span>{{ currency?.name }}</span>
+                    </ng-container>
+                </p>
+                <p>Languages: 
+                    <ng-container *ngFor="let language of country?.languages">
+                        <span>{{ language?.name }}</span>
+                    </ng-container>
+                </p>
+            </div>
+            <div class="group3">
+                <h6>Border Countries:</h6>
+                <div class="borders" *ngFor="let country of borderCountries">
+                    <p>{{ country }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

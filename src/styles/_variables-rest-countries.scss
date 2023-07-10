@@ -1,0 +1,18 @@
+// Neutral
+$dm_dark_blue: hsl(209, 23%, 22%);
+$dm_very_dark_blue: hsl(207, 26%, 17%);
+$lm_very_dark_blue: hsl(200, 15%, 8%);
+$lm_dark_gray: hsl(0, 0%, 52%);
+$lm_very_light_gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$dark_mode_elements: $dm_dark_blue;
+$dark_mode_background: $dm_very_dark_blue;
+$light_mode_text: $lm_very_dark_blue;
+$light_mode_input: $lm_very_light_gray;
+$light_mode_background: $lm_very_light_gray;
+$dark_mode_text: $white;
+$light_mode_elements: $white;
+
+$home_page_font_size: 14px;
+$detail_page_font_size: 16px;
