@@ -19,8 +19,10 @@ enum Region {
 export class HomeComponent {
   @ViewChild('elementRef', { static: false }) elementRef: ElementRef | undefined;
   @ViewChildren('multipleElements') multipleElements: QueryList<ElementRef> | undefined;
+  @ViewChildren('optionElements') optionElements: QueryList<ElementRef> | undefined; // TODO
   regions: any;
   selectedRegion = '';
+  originalCountries: any;
   countries: any;
   searchQuery = '';
   darkModeState: any = '';
@@ -33,6 +35,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.countriesService.getCountries().subscribe(data => {
+      this.originalCountries = data;
       this.countries = data;
     })
 
@@ -59,12 +62,25 @@ export class HomeComponent {
     }
   }
 
-  onSearchChange(event: any) {
+  onSearchChange(query: string) {
+    if (!query) {
+      return;
+    }
+
+    this.countries = this.originalCountries.filter((c: any)=> {
+      return (
+        c.name.toLowerCase().includes(query.toLowerCase())
+      );
+    });
 
   }
 
-  onRegionSelectChange(event: any) {
-    console.log(this.selectedRegion)
+  onRegionSelectChange(region: string) {
+    this.countries = this.originalCountries.filter((c: any)=> {
+      return (
+        c.region.toLowerCase().includes(region.toLowerCase())
+      );
+    });
   }
 
   onCardClick(event: Event, country: any) {

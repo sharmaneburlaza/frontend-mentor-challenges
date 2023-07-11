@@ -7,33 +7,47 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: aliceblue;
     padding: 20px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 
     p {
         text-align: center;
         margin: 0;
         position: absolute;
-        left: 20px;
         font-weight: 800;
     }
 
     .toggle {
         position: absolute;
-        right: 20px;
 
         i {
-            margin-right: 5px;
+            margin-right: 8px;
         }
     }
 }
 
 /* Styles for extra small - medium devices (up to 996px) */
 @media (max-width: 996px) {
-    
+    .nav-container {
+        p {
+            left: 20px;
+        }
+
+        .toggle {
+            right: 20px;
+        }
+    }
 }
 
 /* Styles for extra large devices (996px and above) */
 @media (min-width: 996px) {
-    
+    .nav-container {
+        p {
+            left: 100px;
+        }
+
+        .toggle {
+            right: 100px;
+        }
+    }
 }

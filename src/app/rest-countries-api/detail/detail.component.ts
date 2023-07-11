@@ -1,8 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter, firstValueFrom } from 'rxjs';
 import { CountriesService } from 'src/app/services/countries.service';
-import { getGeneralDynamicStyles } from '../utils';
+import { getElementsDynamicStyles, getGeneralDynamicStyles } from '../utils';
 
 @Component({
   selector: 'rest-countries-detail',
@@ -11,10 +11,11 @@ import { getGeneralDynamicStyles } from '../utils';
 })
 export class DetailComponent {
   @ViewChild('elementRef', { static: false }) elementRef: ElementRef | undefined;
+  @ViewChildren('buttonElements') buttonElements: QueryList<ElementRef> | undefined;
   countries: any = [];
   country: any;
   borderCountries: string[] = [];
-  darkModeState: string | null | undefined;
+  darkModeState: any;
 
   constructor(
     private countriesService: CountriesService,
@@ -47,9 +48,13 @@ export class DetailComponent {
     this.darkModeState = localStorage.getItem('darkModeState');
     if (this.elementRef) {
       const element = this.elementRef.nativeElement;
-      if (this.darkModeState) {
         getGeneralDynamicStyles(this.darkModeState, element);
-      }
+    }
+    if (this.buttonElements) {
+      this.buttonElements.forEach(el => {
+        const element = el.nativeElement;
+        getElementsDynamicStyles(this.darkModeState, element);
+      })
     }
   }
 

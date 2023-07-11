@@ -37,7 +37,6 @@ export class NavComponent {
     if (this.elementRef) {
       const element = this.elementRef.nativeElement;
       if (this.darkModeState === 'dark') {
-        console.log(this.darkModeState)
         element.style.backgroundColor = COLOR.$dm_dark_blue;
         element.style.color = COLOR.$white;
       } else {

@@ -13,13 +13,18 @@ option::placeholder {
 }
 
 .home-container {
-    padding: 20px;
+    position: fixed;
+    top: 80px; // nav height
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: scroll;
 
     .functionalities {
-        // margin: 20px;
     
         .input-group {
-            height: 50px;
+            height: 45px;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
         
             .input-group-prepend {
         
@@ -30,11 +35,13 @@ option::placeholder {
                     justify-content: center;
                     border-top-right-radius: 0;
                     border-bottom-right-radius: 0;
+                    border: none;
                 }
             }
         
             input {
                 height: 45px;
+                border: none;
             }
         }
     
@@ -42,6 +49,8 @@ option::placeholder {
             height: 45px;
             width: 50%;
             margin-top: 10px;
+            border: none;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
         }
     }
     
@@ -50,12 +59,13 @@ option::placeholder {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
     
         .card {
             width: 275px;
-            height: 330px;
-            margin: 25px 25px;
+            height: 340px;
+            border: none;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+
             .card-top {
     
                 img {
@@ -66,12 +76,18 @@ option::placeholder {
             .card-bottom {
                 margin: 20px;
     
-                h3 {
-                    margin-bottom: 10px;
+                h5 {
+                    margin: 20px 0;
+                    font-weight: 600;
                 }
     
                 p {
                     margin: 0;
+                    font-weight: 600;
+
+                    span {
+                        font-weight: 300;
+                    }
                 }
             }
         }
@@ -79,3 +95,71 @@ option::placeholder {
     
 }
 
+/* Styles for extra small - medium devices (up to 996px) */
+@media (max-width: 996px) {
+    .home-container {
+        padding: 20px;
+
+        .functionalities {
+
+
+            .input-group {
+
+            }
+        }
+
+        .content {
+            justify-content: center;
+
+            .card {
+                margin: 25px 0;
+            }
+        }
+    }
+}
+
+/* Styles for extra large devices (996px and above) */
+@media (min-width: 996px) {
+    .home-container {
+        padding: 30px 90px;
+
+        .functionalities {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 10px;
+
+            .input-group {
+                width: 500px;
+                height: 45px;
+
+
+                .input-group-prepend {
+        
+                    .input-group-text {
+
+                    }
+                }
+            
+                input {
+
+                }
+            }
+
+            .form-select {
+                height: 45px;
+                width: 250px;
+                margin-top: 0;
+            }
+
+        }
+
+        .content {
+            justify-content: space-between;
+
+            .card {
+                margin: 25px 10px;
+            }
+        }
+    }
+
+}

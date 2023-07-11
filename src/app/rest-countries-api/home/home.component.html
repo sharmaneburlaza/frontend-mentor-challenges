@@ -16,8 +16,8 @@
         <select #multipleElements class="form-select" 
             [(ngModel)]="selectedRegion" 
             (ngModelChange)="onRegionSelectChange($event)">
-            <option #multipleElements value="" disabled>Filter by Region</option>
-            <option #multipleElements *ngFor="let region of regions" [value]="region.name">{{ region.name }}</option>
+            <option #optionElements value="" disabled>Filter by Region</option>
+            <option #optionElements *ngFor="let region of regions" [value]="region.name">{{ region.name }}</option>
         </select>
     </div>
     <div class="content">

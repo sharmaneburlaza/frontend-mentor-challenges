@@ -13,7 +13,7 @@ export function getGeneralDynamicStyles(darkModeState: string, element: any) {
 export function getElementsDynamicStyles(darkModeState: string, element: any) {
     if (darkModeState === 'dark') {
         element.style.backgroundColor = COLOR.$dm_dark_blue;
-        element.style.color = COLOR.$lm_dark_gray;
+        element.style.color = COLOR.$light_gray;
     } else {
         element.style.backgroundColor = COLOR.$white;
         element.style.color = COLOR.$lm_very_dark_blue;
