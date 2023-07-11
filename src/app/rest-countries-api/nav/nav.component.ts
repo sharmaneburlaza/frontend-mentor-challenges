@@ -25,7 +25,7 @@ export class NavComponent {
       }
     ]
     const darkModeAtLocalStore = localStorage.getItem('darkModeState');
-    this.darkModeState = darkModeAtLocalStore ? darkModeAtLocalStore : 'dark';
+    this.darkModeState = darkModeAtLocalStore ? darkModeAtLocalStore : 'light';
   }
 
   ngAfterViewInit() {

@@ -46,8 +46,6 @@ export class HomeComponent {
       { name: Region.EUROPE },
       { name: Region.OCEANIA },
     ]
-    const darkModeAtLocalStore = localStorage.getItem('darkModeState');
-    this.darkModeState = darkModeAtLocalStore ? darkModeAtLocalStore : 'dark';
   }
 
   ngAfterViewChecked() {

@@ -30,8 +30,6 @@ export class DetailComponent {
         this.country = this.countries.filter((d: any) => d.name === selectedCountry)[0];
         this.getBorderCountries();
     })
-    const darkModeAtLocalStore = localStorage.getItem('darkModeState');
-    this.darkModeState = darkModeAtLocalStore ? darkModeAtLocalStore : 'dark';
   }
 
   getBorderCountries() {
