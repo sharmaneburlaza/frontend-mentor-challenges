@@ -1,6 +1,6 @@
 # Frontend Mentor Challenges
 
-## Multi-step form solution
+# Multi-step form solution
 
 This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
 
@@ -30,6 +30,39 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Mobile-first workflow
+- [Angular](https://angular.io/) - JS Framework
+
+
+# Frontend Mentor - REST Countries API with color theme switcher solution
+
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode *(optional)*
+
+### Links
+
+- Solution URL: [Solution URL](https://github.com/sjmburlaza/frontend-mentor-challenges/tree/main/src/app/rest-countries-api)
+- Live Site URL: [Live site URL](https://frontend-mentor-challenges-solutions-by-sjmb.vercel.app/rest-countries/home)
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 - Mobile-first workflow
 - [Angular](https://angular.io/) - JS Framework
 

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { MultiStepFormComponent } from './multi-step-form/multi-step-form.component';
 
 const routes: Routes = [
-  {path: 'multi-step-form', component: MultiStepFormComponent},
+  { path: 'multi-step-form', component: MultiStepFormComponent },
   {
     path: 'rest-countries',
     children: [
@@ -13,7 +14,8 @@ const routes: Routes = [
       }
     ]
   },
-  { path: '', redirectTo: 'multi-step-form', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

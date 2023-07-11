@@ -9,12 +9,14 @@ import { MultiStepFormComponent } from './multi-step-form/multi-step-form.compon
 
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { RestCountriesApiModule } from './rest-countries-api/rest-countries-api.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MultiStepFormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

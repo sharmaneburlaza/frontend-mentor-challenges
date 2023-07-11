@@ -1,0 +1,103 @@
+* {
+    font-family: 'Montserrat';
+    color: hsl(0, 0%, 90%);
+}
+
+.home-container {
+    background-color: hsl(207, 26%, 17%);
+}
+
+
+
+/* Styles for extra small - medium devices (up to 996px) */
+@media (max-width: 996px) {
+    .home-container {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 16px;
+            align-self: center;
+            width: 300px;
+        }
+
+        .content {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+    
+            .card {
+                height: 320px;
+                width: 300px;
+                border-color: whitesmoke;
+                border: solid 1px;
+                background-color: hsl(209, 23%, 22%);
+                margin-bottom: 20px;
+    
+                .top {
+                    img {
+                        width: 100%;
+                    }
+                }
+    
+                .bottom {
+                    margin: 20px;
+
+                    h4 {
+                        font-size: 16px;
+                    }
+                    
+                    a {
+                        margin-right: 20px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Styles for extra LARGE devices (996px and above) */
+@media (min-width: 996px) {
+    .home-container {
+        padding: 50px 180px;
+        height: 100vh;
+    
+        h3 {
+            margin: 0 20px;
+        }
+    
+        .content {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+    
+            .card {
+                margin: 20px;
+                height: 480px;
+                width: 500px;
+                border-color: whitesmoke;
+                border: solid 1px;
+                background-color: hsl(209, 23%, 22%);
+    
+                .top {
+                    img {
+                        width: 100%;
+                    }
+                }
+    
+                .bottom {
+                    margin: 20px;
+                    a {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
