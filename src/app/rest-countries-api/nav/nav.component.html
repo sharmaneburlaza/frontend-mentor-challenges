@@ -1,5 +1,5 @@
 <div #elementRef class="nav-container">
-    <p>Where in the world?</p>
+    <p (click)="navigateToHome()">Where in the world?</p>
     <div class="toggle" *ngFor="let icon of icons" (click)="toggleDarkMode()">
         <i *ngIf="icon.id === darkModeState"
             id="{{icon.id}}" 

@@ -1,6 +1,6 @@
 <rest-countries-nav (darkModeValue)="handleValueChange($event)"></rest-countries-nav>
 <div #elementRef class="detail-container">
-    <button #buttonElements (click)="backToHome()"> <i class="bi bi-arrow-left"></i> Back </button>
+    <button #buttonElements (click)="goBack()"> <i class="bi bi-arrow-left"></i> Back </button>
     <div class="content">
         <div class="image-container">
             <img src="{{ country?.flags?.png }}" alt="">
@@ -17,25 +17,25 @@
                 </div>
                 <div class="group2">
                     <p>Top Level Domain: 
-                        <ng-container *ngFor="let tld of country?.topLevelDomain">
-                            <span>{{ tld }}</span>
-                        </ng-container>
+                        <span *ngFor="let tld of country?.topLevelDomain; let i = index">
+                            {{ tld }}
+                        </span>
                     </p>
                     <p>Currencies: 
-                        <ng-container *ngFor="let currency of country?.currencies">
-                            <span>{{ currency?.name }}</span>
-                        </ng-container>
+                        <span *ngFor="let currency of country?.currencies; let i = index">
+                            {{ currency?.name }}<ng-container *ngIf="i !== country?.currencies.length - 1">,</ng-container>
+                        </span>
                     </p>
                     <p>Languages: 
-                        <ng-container *ngFor="let language of country?.languages">
-                            <span>{{ language?.name }}</span>
-                        </ng-container>
+                        <span *ngFor="let language of country?.languages; let i = index">
+                            {{ language?.name }}<ng-container *ngIf="i !== country?.languages.length - 1">,</ng-container>
+                        </span>
                     </p>
                 </div>
                 <div class="group3">
                     <h6 class="borders-title">Border Countries:</h6>
-                    <div class="borders" *ngFor="let country of borderCountries">
-                        <p #buttonElements>{{ country }}</p>
+                    <div class="borders" *ngFor="let countryName of borderCountries">
+                        <p #buttonElements (click)="navigateCountry(countryName)">{{ countryName }}</p>
                     </div>
                 </div>
             </div>

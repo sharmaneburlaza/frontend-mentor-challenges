@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { COLOR } from '../colors.const'
 
 
@@ -12,6 +13,8 @@ export class NavComponent {
   @Output() darkModeValue: EventEmitter<string> = new EventEmitter<string>();
   icons: any = [];
   darkModeState: any;
+
+  constructor(private router: Router){}
 
   ngOnInit(): void {
     this.icons = [
@@ -50,5 +53,9 @@ export class NavComponent {
     this.darkModeState = this.darkModeState === 'dark' ? 'light' : 'dark';
     localStorage.setItem('darkModeState', this.darkModeState);
     this.getDynamicNavStyle();
+  }
+
+  navigateToHome() {
+    this.router.navigate(['rest-countries/home']);
   }
 }

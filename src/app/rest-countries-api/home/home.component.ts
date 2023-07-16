@@ -1,6 +1,6 @@
 import { Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountriesService } from 'src/app/services/countries.service';
+import { CountriesService } from 'src/app/rest-countries-api/services/countries.service';
 import { getElementsDynamicStyles, getGeneralDynamicStyles } from '../utils';
 
 enum Region {
@@ -66,7 +66,8 @@ export class HomeComponent {
     if (!query) {
       return;
     }
-
+    this.selectedRegion = '';
+    
     this.countries = this.originalCountries.filter((c: any)=> {
       return (
         c.name.toLowerCase().includes(query.toLowerCase())

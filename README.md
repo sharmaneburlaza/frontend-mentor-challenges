@@ -1,6 +1,6 @@
 # Frontend Mentor Challenges
 
-# Multi-step form solution
+# Multi-step Form Solution
 
 This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
 
@@ -33,6 +33,7 @@ Users should be able to:
 - Mobile-first workflow
 - [Angular](https://angular.io/) - JS Framework
 
+#
 
 # REST Countries API with color theme switcher solution
 
@@ -61,8 +62,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
 - Mobile-first workflow
 - [Angular](https://angular.io/) - JS Framework
 

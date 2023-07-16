@@ -1,7 +1,7 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { Router } from '@angular/router';
-import { filter, firstValueFrom } from 'rxjs';
-import { CountriesService } from 'src/app/services/countries.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { CountriesService } from 'src/app/rest-countries-api/services/countries.service';
 import { getElementsDynamicStyles, getGeneralDynamicStyles } from '../utils';
 
 @Component({
@@ -19,15 +19,27 @@ export class DetailComponent {
 
   constructor(
     private countriesService: CountriesService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
-    const selectedCountry = localStorage.getItem('selectedCountry');
+    this.route.params.subscribe(params => {
+      const name = params['name'];
+      this.getCountry(name);
+    })
+  }
+
+  navigateCountry(countryName: string) {
+    this.router.navigate(['rest-countries/detail/' + countryName]);
+  }
+
+  getCountry(name: string) {
     this.countriesService.getCountries()
       .subscribe(data => {
         this.countries = Object.values(data);
-        this.country = this.countries.filter((d: any) => d.name === selectedCountry)[0];
+        this.country = this.countries.filter((d: any) => d.name === name)[0];
         this.getBorderCountries();
     })
   }
@@ -58,8 +70,8 @@ export class DetailComponent {
     }
   }
 
-  backToHome() {
-    this.router.navigate(['rest-countries/home']);
+  goBack() {
+    this.location.back();
   }
 
   handleValueChange(event: any) {
